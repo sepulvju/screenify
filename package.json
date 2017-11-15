@@ -1,0 +1,21 @@
+{
+  "name": "screenify",
+  "version": "0.0.1",
+  "description": "A new wey to share content to screens.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sepulvju/screenify/"
+  },
+  "keywords": [
+    "screen",
+    "content",
+    "video"
+  ],
+  "author": "sepulvju <jp103@tuta.io>",
+  "license": "MIT"
+}
