@@ -10,7 +10,9 @@
     "build": "npm run clean && npm run build-server",
     "lint": "standard server/**/*.js",
     "test": "npm run lint",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/index.js",
+    "docker-build": "docker build -t sepulvju/screenify:latest .",
+    "docker-run": "docker run -p 8080:8080 -d sepulvju/screenify"
   },
   "repository": {
     "type": "git",
