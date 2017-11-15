@@ -4,12 +4,13 @@
   "description": "A new wey to share content to screens.",
   "main": "app.js",
   "scripts": {
-    "clean": "rm -rf build && mkdir build",
-    "build-server": "babel -d build/ server/ -s",
-    "build": "npm run clean && npm run build-server",
+    "dev": "nodemon -w server --exec \"babel-node server --presets env\"",
+    "clean": "rm -rf dist && mkdir dist",
+    "build-server": "babel -s -D -d dist/ server/",
+    "build": "npm run lint && npm run clean && npm run build-server",
     "lint": "standard server/**/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node build/app.js"
+    "test": "npm run lint",
+    "start": "npm run build && node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -27,13 +28,16 @@
     "babel-eslint": "^8.0.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-minify": "^0.2.0",
+    "nodemon": "^1.12.1",
     "standard": "^10.0.3"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
-    "winston": "^2.4.0"
+    "morgan": "^1.9.0",
+    "winston": "^3.0.0-rc1"
   },
   "standard": {
     "parser": "babel-eslint"

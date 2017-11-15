@@ -85,4 +85,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # No Build folders
-build
+dist
